@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="./src/style.scss" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Сотовая связь и интернет от ведущего оператора t2. Самые выгодные звонки с мобильного без переплат Москва и область."
+    />
+    <title>Tele2</title>
+    <meta property="og:title" content="Tele2" />
+    <meta
+      property="og:description"
+      content="Сотовая связь и интернет от ведущего оператора t2. Самые выгодные звонки с мобильного без переплат Москва и область."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://localhost:5173" />
+    <meta
+      property="og:image"
+      content="https://localhost:5173/Tele2Static.svg"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap");
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Website",
+        "name": "Tele2",
+        "description": "Сотовая связь и интернет от ведущего оператора t2. Самые выгодные звонки с мобильного без переплат Москва и область.";
+        "url": "https://localhost:5173",
+        "logo": "https://localhost:5173/Tele2Static.svg",
+        "author": {
+          "@type": "Person",
+          "name": "Em1l",
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/imask"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <section class="logotype">
+          <a href=""
+            ><img src="./src/assets/icons/Tele2Logo.svg" alt="logo"
+          /></a>
+        </section>
+        <section class="location">
+          <img src="./src/assets/icons/Location.svg" alt="location"/>
+          <form action="">
+            <button class="showDialog" type="button" id="showDialog">
+              <p id="CurrentCity"></p>
+            </button>
+            <dialog class="cityDialog" id="cityDialog">
+              <h3 id="CurrentCity2"></h3>
+              <section class="dialogButtons">
+                <button id="closeDialog" type="button">Да, все верно</button>
+                <button id="changeRegion" type="button">Изменить регион</button>
+              </section>
+            </dialog>
+          </form>
+          <form action="">
+            <dialog id="chooseRegion" class="chooseRegion">
+              <section class="chooseRegionContainer">
+                <h2>Выберите город</h2>
+                <section class="changedRegionList">
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Воронеж"
+                  >
+                    Воронеж
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Иркутск"
+                  >
+                    Иркутск
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Кемерово"
+                  >
+                    Кемерово
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Красноярск"
+                  >
+                    Красноярск
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Москва"
+                  >
+                    Москва
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Н.Новгород"
+                  >
+                    Н.Новгород
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Новосибирск"
+                  >
+                    Новосибирск
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Пермь"
+                  >
+                    Пермь
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Ростов-на-Дону"
+                  >
+                    Ростов-на-Дону
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Санкт-Петербург"
+                  >
+                    Санкт-Петербург
+                  </button>
+                  <button
+                    type="button"
+                    class="changedRegionButtonClass"
+                    id="changedRegionButton"
+                    data-value="Челябинск"
+                  >
+                    Челябинск
+                  </button>
+                </section>
+              </section>
+            </dialog>
+          </form>
+        </section>
+      </nav>
+    </header>
+    <button id="scrollButton" class="scrollButton" type="button">
+      <img src="./src/assets/icons/Arrow_top_svg.svg.png" alt="scrollBtn" />
+    </button>
+    <main>
+      <section class="YourBenefit">
+        <section class="BenInformation">
+          <p>Акция продлится с 1 по 20 сентября</p>
+          <h1 class="accentFont">
+            ЭТО ВАША <br />
+            <span class="accentColor">ВЫГОДА!</span>
+          </h1>
+          <p>
+            Тариф «Мой онлайн+» и 1 ТБ трафика в подарок для новых абонентов
+          </p>
+          <form action="">
+            <button class="button dialogFormButton" id="dialogFormButton" type="button" >Принять участие</button>
+            <dialog id="dialogForm" class="dialogFormClass">
+              <form action="#">
+                <section class="FormPhoneNumber">
+                  <label for="phoneNumber" class="phoneNumberLabel"
+                    >Номер телефона</label
+                  >
+                  <input
+                    id="phoneNumber"
+                    type="tel"
+                    placeholder="+7 (988) 543-32-34"
+                  />
+                  <label for="phoneNumber" id="CodeSendedLabel" class="CodeSendedLabel">
+                    <section>
+                      <img src="./src/assets/icons/CodeSended.svg" alt="CodeSended">
+                      <p>Промокод выслан на ваш номер</p>
+                    </section>
+                  </label>
+                   <label for="phoneNumber" class="CodeNotSendedLabel">
+                    <section>
+                      <img src="./src/assets/icons/CodeNotSended.svg" alt="CodeNotSended">
+                      <p>На этот номер уже выслан промокод</p>
+                    </section>
+                  </label>
+                   <label for="phoneNumber" class="FormInvalid">
+                    <section>
+                      <img src="./src/assets/icons/CodeNotSended.svg" alt="FormInvalid">
+                      <p>Неправильно заполнен номер</p>
+                    </section>
+                  </label>
+                  <label for="phoneNumber" class="CheckBoxInvalid">
+                    <section>
+                      <img src="./src/assets/icons/CodeNotSended.svg" alt="CheckBoxInvalid">
+                      <p>Необходимо принять условие соглашения</p>
+                    </section>
+                  </label>
+                </section>
+              
+                <section class="FormPersonalData">
+                  <input required class="checkbox" id="personalData" type="checkbox" />
+                  <label for="personalData"
+                    >Даю согласие на обработку персональных <br />
+                    данных. <a href="#">Условия соглашения</a></label
+                  >
+                </section>
+                <section class="FormPromocode">
+                  <button class="button2 sendPromoClass" type="button" id="sendPromo">Выслать промокод</button>
+                  <button class="button2 dialogFormClose" type="button">Закрыть</button>
+                </section>
+              </form>
+            </dialog>
+          </form>
+        </section>
+        <section class="BenImage">
+          <img src="./src/assets/images/Boss.png" alt="BigBoss" />
+        </section>
+      </section>
+
+      <section class="Advantages">
+        <h2>Один терабайт — много любимых развлечений</h2>
+        <p>
+          Подарок получают только новые абоненты при подключении услуг Tele2 с
+          тарифом «Мой онлайн+». Трафик расходуется в течение года.
+        </p>
+        <section class="AdvContainer">
+          <section class="AdvContent">
+            <img src="./src/assets/icons/video.svg" alt="video" />
+            <p>Около 500 часов видео</p>
+          </section>
+          <section class="AdvContent">
+            <img src="./src/assets/icons/headset.svg" alt="headset" />
+            <p>Примерно 200 000 песен</p>
+          </section>
+          <section class="AdvContent">
+            <img src="./src/assets/icons/camera.svg" alt="camera" />
+            <p>Порядка 300 000 фото</p>
+          </section>
+        </section>
+      </section>
+
+      <section class="FewSteps">
+          <section class="FewStepsH2Top">
+            <h2 >
+            Несколько шагов <br />
+            <span class="accentColor">и 1 TB — ваш</span>
+          </h2>
+          </section>
+        <section class="FewStepsForm">
+          <section class="FewStepsH2Bottom">
+            <h2>
+              Несколько шагов <br />
+              <span class="accentColor">и 1 TB — ваш</span>
+            </h2>
+        </section>
+          <form action="">
+            <section class="FormPhoneNumber">
+              <label for="phoneNumber" class="phoneNumberLabel"
+                >Номер телефона</label
+              >
+              <input
+                id="phoneNumber"
+                type="tel"
+                placeholder="+7 (988) 543-32-34"
+              />
+            </section>
+            <section class="FormPersonalData">
+              <input class="checkbox" required id="personalData" type="checkbox" />
+              <label for="personalData"
+                >Даю согласие на обработку персональных <br />
+                данных. <a href="">Условия соглашения</a></label
+              >
+            </section>
+            <section class="FormPromocode">
+              <button class="button2" type="button" class="sendPromoClass" id="sendPromo">Выслать промокод</button>
+            </section>
+             <label for="phoneNumber" id="CodeSendedLabel" class="CodeSendedLabelBottom">
+                    <section>
+                      <img src="./src/assets/icons/CodeSended2.svg" alt="CodeSended ">
+                      <p>Промокод выслан на ваш номер</p>
+                    </section>
+              </label>
+              <label for="phoneNumber" class="CodeNotSendedLabelBottom">
+                    <section>
+                      <img src="./src/assets/icons/CodeNotSended2.svg" alt="CodeNotSended">
+                      <p>На этот номер уже выслан промокод, на один <br> номер можно получить один промокод</p>
+                    </section>
+              </label>
+              <label for="phoneNumber" class="FormInvalidBottom">
+                    <section>
+                      <img src="./src/assets/icons/CodeNotSended2.svg" alt="FormInvalid">
+                      <p>Неправильно заполнен номер</p>
+                    </section>
+              </label>
+              <label for="phoneNumber" class="CheckBoxInvalidBottom">
+                    <section>
+                      <img src="./src/assets/icons/CodeNotSended2.svg" alt="CheckBoxInvalid">
+                      <p>Необходимо принять условие соглашения</p>
+                    </section>
+              </label>
+              </label>
+          </form>
+        </section>
+        <section class="FewStepsList">
+          <section class="FewStepsListItem">
+            <img src="./src/assets/icons/ListFirstNum.svg" alt="ListFirstNum" />
+            <p>
+              Ведите свой номер телефона, затем дождитесь смс с промокодом для
+              получения Тб
+            </p>
+          </section>
+          <section class="FewStepsListItem">
+            <img
+              src="./src/assets/icons/ListSecondNum.svg"
+              alt="ListSecondNum"
+            />
+            <p>
+              Перейдите на сайт Tele2 и активируйте промокод при подключении на
+              тариф «Мой Онлайн+»
+            </p>
+          </section>
+          <section class="FewStepsListItem">
+            <img src="./src/assets/icons/ListThirdNum.svg" alt="ListThirdNum" />
+            <p>Используйте свой подарочный ТБ от Tele2 в течение всего года</p>
+          </section>
+        </section>
+      </section>
+
+      <section class="Tariff">
+        <section class="TariffInformation">
+          <h2>Заходите на сайт Tele2</h2>
+          <p>
+            Перейдите в магазин, оформите тариф «Мой онлайн+» и на страничке
+            активации введите ваш промокод. Готово!
+          </p>
+          <button
+            class="button2"
+            onclick="window.open('https://rostov.tele2.ru')"
+          >
+            Оформить тариф
+          </button>
+        </section>
+        <section class="TariffImage">
+          <img src="./src/assets/images/TariffImage.png" alt="TariffImage" />
+        </section>
+      </section>
+    </main>
+
+    <footer class="Footer" >
+      <section class="footerTopSide">
+        <section class="footerLinks">
+          <a href="#"
+            ><img src="./src/assets/icons/Twitter.svg" alt="Twitter"
+          /></a>
+          <a href="#"
+            ><img src="./src/assets/icons/VKontakte.svg" alt="VKontakte"
+          /></a>
+          <a href="#"
+            ><img src="./src/assets/icons/Facebook.svg" alt="Facebook"
+          /></a>
+        </section>
+        <section class="Terms">
+          <a href="#">Полные условия акции</a>
+          <img src="./src/assets/icons/16+.svg" alt="16+" />
+        </section>
+      </section>
+
+      <section class="footerBottomSide">
+        <section class="BottomSideContent">
+          <a href="https://rostov.tele2.ru"><img src="./src/assets/icons/Tele2Logo.svg" alt="footerLogo" /></a>
+          <p>© Tele2 Россия, 2021</p>
+        </section>
+        <section class="BottomSideContent">
+          <p>Сделано в Студии Олега Чулакова</p>
+          <a href="https://chulakov.ru/"><img src="./src/assets/icons/ChulakovLogo.svg" alt="footerChulakov" /></a>
+        </section>
+      </section>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
