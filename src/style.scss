@@ -36,7 +36,8 @@ dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.8);
 }
 dialog:nth-child(1)::backdrop {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(31, 34, 41, 1);
+  margin-block-start: 120px;
 }
 dialog:nth-child(3)::backdrop {
   background-color: rgba(0, 0, 0, 0);
@@ -161,7 +162,7 @@ body {
           position: absolute;
           z-index: 11;
           inline-size: 100%;
-          block-size: 90vh;
+          block-size: 100vh;
           inset-inline-start: 40px;
           inset-block-start: 120px;
           background-color: var(--color-bg);
@@ -590,6 +591,7 @@ body {
   }
 }
 
+
 @media (max-width: 999px) {
   .cityDialog.cityDialog.cityDialog {
     inset-inline-start: 55%;
@@ -618,6 +620,9 @@ body {
   .Footer.Footer {
     inline-size: 100%;
     padding-inline: 20px;
+  } 
+  header {
+    inline-size: 100%;
   }
 }
 @media (max-width: 860px) {
@@ -716,6 +721,10 @@ body {
 }
 
 @media (max-width: 455px) {
+
+  header {
+    padding-inline: none;
+  }
   .FewStepsList.FewStepsList.FewStepsList {
     inline-size: 100%;
     text-align: center;
@@ -738,6 +747,10 @@ body {
 }
 
 @media(max-width: 400px) {
+  header nav {
+
+    padding: none;
+  }
   .TariffImage {
     img {
       inline-size: 280px;
